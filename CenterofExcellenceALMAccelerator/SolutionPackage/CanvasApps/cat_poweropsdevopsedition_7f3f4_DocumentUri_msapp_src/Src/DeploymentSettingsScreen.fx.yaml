@@ -124,10 +124,7 @@ DeploymentSettingsScreen As screen:
                 LookUp(
                     AllEnvironments,
                     'Deployment Environment'.URL in properties.linkedEnvironmentMetadata.instanceUrl
-                ).properties.linkedEnvironmentMetadata.uniqueName,
-                //TODO: May want to make the build name a setting on the Step. For now assume a build exists with the appropriate name
-                "BuildName",
-                "deploy-" & Lower(Name) & "-" & SelectedSolutionToConfigure.uniquename
+                ).properties.linkedEnvironmentMetadata.uniqueName
             )
         );
         UpdateContext({locDeploymentEnvironmentCount: CountRows(DeploymentEnvironments)});
@@ -174,7 +171,7 @@ DeploymentSettingsScreen As screen:
                 );
                 If(
                     IsBlank(locEnvironmentDeploymentSetting.Data),
-                    UpdateContext({EnvironmentDeploymentSettings: ParseDeploymentSettings.Run("[]")}),
+                    UpdateContext({EnvironmentDeploymentSettings: []}),
                     UpdateContext({EnvironmentDeploymentSettings: ParseDeploymentSettings.Run(locEnvironmentDeploymentSetting.Data)})
                 );
                 UpdateContext(
@@ -186,12 +183,7 @@ DeploymentSettingsScreen As screen:
                                     StartsWith(
                                         Name,
                                         "environmentvariable."
-                                    ) And !IsBlankOrError(Value) And !IsBlank(
-                                        Find(
-                                            "sharepoint",
-                                            Value
-                                        )
-                                    )
+                                    ) And ".sharepoint." in Value
                                 ),
                                 Value
                             ),
@@ -484,21 +476,25 @@ DeploymentSettingsScreen As screen:
                     Collect(
                         SolutionFlows,
                         AddColumns(
-                            GetSolutionFlows.Run(
-                                Last(
-                                    FirstN(
-                                        ClearCollect(
-                                            splitCol4,
-                                            Split(
-                                                SelectedEnvironment.properties.linkedEnvironmentMetadata.instanceUrl,
-                                                "."
-                                            )
-                                        ),
-                                        2
-                                    )
-                                ).Result,
-                                SelectedEnvironment.properties.linkedEnvironmentMetadata.uniqueName,
-                                SelectedSolutionToConfigure.solutionid
+                            //Filter to Modern Flows only for Now category = 5
+                            Filter(
+                                GetSolutionFlows.Run(
+                                    Last(
+                                        FirstN(
+                                            ClearCollect(
+                                                splitCol4,
+                                                Split(
+                                                    SelectedEnvironment.properties.linkedEnvironmentMetadata.instanceUrl,
+                                                    "."
+                                                )
+                                            ),
+                                            2
+                                        )
+                                    ).Result,
+                                    SelectedEnvironment.properties.linkedEnvironmentMetadata.uniqueName,
+                                    SelectedSolutionToConfigure.solutionid
+                                ),
+                                category = 5
                             ),
                             "EnvironmentUsers",
                             EnvironmentUsers,
@@ -874,7 +870,7 @@ DeploymentSettingsScreen As screen:
             HoverBorderColor: =ColorFade(drpDeployEnvironments.BorderColor, 20%)
             HoverColor: =ColorFade(drpDeployEnvironments.Color, 20%)
             HoverFill: =ColorFade(drpDeployEnvironments.SelectionFill, 20%)
-            Items: =DeploymentEnvironments
+            Items: =Sort(DeploymentEnvironments, 'Step Number')
             OnChange: |-
                 =UpdateContext({locCloseAfterSave: false});
                 Select(btnSaveDeployment);
@@ -884,7 +880,7 @@ DeploymentSettingsScreen As screen:
             PressedFill: =drpDeployEnvironments.Color
             Tooltip: ="Select an Environment to Configure Deployment Settings"
             Visible: =!showNewDeployEnvironment
-            Width: =1837
+            Width: =1630
             X: =28
             Y: =137
             ZIndex: =15
@@ -1374,18 +1370,35 @@ DeploymentSettingsScreen As screen:
                                 adjacentRow: LookUp(
                                     glrFlows.AllItems,
                                     SortOrder = newSortOrder
-                                ),
+                                )
+                            }
+                        );
+                        UpdateContext(
+                            {
                                 adjacentRowActivate: Text(adjacentRow.chkActivateFlow.Value),
                                 adjacentRowCurrentValue: adjacentRow.drpFlowOwnerUsers.Selected.internalemailaddress,
                                 adjacentRowActivationCurrentValue: adjacentRow.drpFlowActivationUsers.Selected.internalemailaddress,
-                                adjacentRowSharingCurrentValue: adjacentRow.drpFlowActivationUsers.Selected.internalemailaddress,
+                                adjacentRowSharingCurrentValue: adjacentRow.drpFlowShareGroupTeams.Selected.name,
+                    
                                 adjacentRowSortOrder: ThisItem.SortOrder,
+                    
                                 newActivate: Text(glrFlows.Selected.chkActivateFlow.Value),
                                 newCurrentValue: glrFlows.Selected.drpFlowOwnerUsers.Selected.internalemailaddress,
                                 newActivationCurrentValue: glrFlows.Selected.drpFlowActivationUsers.Selected.internalemailaddress,
                                 newSharingCurrentValue: glrFlows.Selected.drpFlowShareGroupTeams.Selected.name
                             }
                         );
+                        Patch(
+                            SolutionFlows,
+                            ThisItem,
+                            {
+                                Activate: newActivate,
+                                CurrentValue: newCurrentValue,
+                                ActivationCurrentValue: newActivationCurrentValue,
+                                SharingCurrentValue: newSharingCurrentValue,
+                                SortOrder: newSortOrder
+                            }
+                        );    
                         Patch(
                             SolutionFlows,
                             adjacentFlow,
@@ -1397,17 +1410,6 @@ DeploymentSettingsScreen As screen:
                                 SortOrder: adjacentRowSortOrder
                             }
                         );
-                        Patch(
-                            SolutionFlows,
-                            ThisItem,
-                            {
-                                SortOrder: newSortOrder,
-                                Activate: newActivate,
-                                CurrentValue: newCurrentValue,
-                                ActivationCurrentValue: newActivationCurrentValue,
-                                SharingCurrentValue: newSharingCurrentValue
-                            }
-                        );    
                     );
                     UpdateContext({sortFlowEnabled: true});
                 PressedBorderColor: =ColorFade(icoSortFlowsUp.BorderColor, -20%)
@@ -1442,11 +1444,15 @@ DeploymentSettingsScreen As screen:
                                 adjacentRow: LookUp(
                                     glrFlows.AllItems,
                                     SortOrder = newSortOrder
-                                ),
+                                )
+                            }
+                        );
+                        UpdateContext(
+                            {
                                 adjacentRowActivate: Text(adjacentRow.chkActivateFlow.Value),
                                 adjacentRowCurrentValue: adjacentRow.drpFlowOwnerUsers.Selected.internalemailaddress,
                                 adjacentRowActivationCurrentValue: adjacentRow.drpFlowActivationUsers.Selected.internalemailaddress,
-                                adjacentRowSharingCurrentValue: adjacentRow.drpFlowActivationUsers.Selected.internalemailaddress,
+                                adjacentRowSharingCurrentValue: adjacentRow.drpFlowShareGroupTeams.Selected.name,
                                 adjacentRowSortOrder: ThisItem.SortOrder,
                                 newActivate: Text(glrFlows.Selected.chkActivateFlow.Value),
                                 newCurrentValue: glrFlows.Selected.drpFlowOwnerUsers.Selected.internalemailaddress,
@@ -1456,26 +1462,27 @@ DeploymentSettingsScreen As screen:
                         );
                         Patch(
                             SolutionFlows,
-                            adjacentFlow,
+                            ThisItem,
                             {
-                                Activate: adjacentRowActivate,
-                                CurrentValue: adjacentRowCurrentValue,
-                                ActivationCurrentValue: adjacentRowActivationCurrentValue,
-                                SharingCurrentValue: adjacentRowSharingCurrentValue,
-                                SortOrder: adjacentRowSortOrder
+                                Activate: newActivate,
+                                CurrentValue: newCurrentValue,
+                                ActivationCurrentValue: newActivationCurrentValue,
+                                SharingCurrentValue: newSharingCurrentValue,
+                                SortOrder: newSortOrder
                             }
                         );
                         Patch(
                             SolutionFlows,
-                            ThisItem,
+                            adjacentFlow,
                             {
-                                SortOrder: newSortOrder,
-                                Activate: newActivate,
-                                CurrentValue: newCurrentValue,
-                                ActivationCurrentValue: newActivationCurrentValue,
-                                SharingCurrentValue: newSharingCurrentValue
+                                SortOrder: adjacentRowSortOrder,
+                                Activate: adjacentRowActivate,
+                                CurrentValue: adjacentRowCurrentValue,
+                                ActivationCurrentValue: adjacentRowActivationCurrentValue,
+                                SharingCurrentValue: adjacentRowSharingCurrentValue
                             }
-                        );    
+                        );
+                        
                     );
                     UpdateContext({sortFlowEnabled: true});
                 PressedBorderColor: =ColorFade(icoSortFlowsDown.BorderColor, -20%)
@@ -2941,21 +2948,18 @@ DeploymentSettingsScreen As screen:
                         Collect(
                             DeploymentSettings,
                             {
-                                Build: SelectedDeploymentEnvironment.BuildName,
-                                Environment: SelectedDeploymentEnvironment.Name,
                                 Name: "connectionreference." & connectionreferencelogicalname,
                                 Value: If(
                                     IsBlank(drpConnectionReferenceConnections.Selected),
                                     "",
                                     drpConnectionReferenceConnections.Selected.ConnectionId
-                                )
+                                ),
+                                Data: connectorid
                             }
                         );
                         Collect(
                             DeploymentSettings,
                             {
-                                Build: SelectedDeploymentEnvironment.BuildName,
-                                Environment: SelectedDeploymentEnvironment.Name,
                                 Name: "connectionreference.user." & connectionreferencelogicalname,
                                 Value: If(
                                     IsBlank(drpConnectionReferenceConnections.Selected),
@@ -2986,8 +2990,6 @@ DeploymentSettingsScreen As screen:
                     Collect(
                         DeploymentSettings,
                         {
-                            Build: SelectedDeploymentEnvironment.BuildName,
-                            Environment: SelectedDeploymentEnvironment.Name,
                             Name: "environmentvariable." & schemaname,
                             Value: If(
                                 type = 100000004 && apiid = "/providers/microsoft.powerapps/apis/shared_sharepointonline",
@@ -2997,7 +2999,8 @@ DeploymentSettingsScreen As screen:
                                     drpSharepointLists.Selected.id
                                 ),
                                 txtEnvironmentVariableValue.Text
-                            )
+                            ),
+                            Data: Text(type)
                         }
                     )
                 );
@@ -3007,14 +3010,10 @@ DeploymentSettingsScreen As screen:
                     Collect(
                         DeploymentSettings,
                         {
-                            Build: SelectedDeploymentEnvironment.BuildName,
-                            Environment: SelectedDeploymentEnvironment.Name,
                             Name: "canvasshare.aadGroupId." & name,
                             Value: drpCanvasAppShareGroups.Selected.id
                         },
                         {
-                            Build: SelectedDeploymentEnvironment.BuildName,
-                            Environment: SelectedDeploymentEnvironment.Name,
                             Name: "canvasshare.roleName." & name,
                             Value: drpCanvasAppSharePermission.Selected.Value
                         }
@@ -3026,8 +3025,6 @@ DeploymentSettingsScreen As screen:
                     Collect(
                         DeploymentSettings,
                         {
-                            Build: SelectedDeploymentEnvironment.BuildName,
-                            Environment: SelectedDeploymentEnvironment.Name,
                             Name: "owner.ownerEmail." & Substitute(
                                 name,
                                 " ",
@@ -3035,8 +3032,6 @@ DeploymentSettingsScreen As screen:
                             ) & "." & workflowid,
                             Value: drpFlowOwnerUsers.Selected.internalemailaddress        },
                         {
-                            Build: SelectedDeploymentEnvironment.BuildName,
-                            Environment: SelectedDeploymentEnvironment.Name,
                             Name: "flow.sharing." & Substitute(
                                 name,
                                 " ",
@@ -3045,8 +3040,6 @@ DeploymentSettingsScreen As screen:
                             Value: drpFlowShareGroupTeams.Selected.name
                         },
                         {
-                            Build: SelectedDeploymentEnvironment.BuildName,
-                            Environment: SelectedDeploymentEnvironment.Name,
                             Name: "activateflow.activateas." & Substitute(
                                 name,
                                 " ",
@@ -3055,8 +3048,6 @@ DeploymentSettingsScreen As screen:
                             Value: drpFlowActivationUsers.Selected.internalemailaddress
                         },
                         {
-                            Build: SelectedDeploymentEnvironment.BuildName,
-                            Environment: SelectedDeploymentEnvironment.Name,
                             Name: "activateflow.order." & Substitute(
                                 name,
                                 " ",
@@ -3065,8 +3056,6 @@ DeploymentSettingsScreen As screen:
                             Value: SortOrder
                         },
                         {
-                            Build: SelectedDeploymentEnvironment.BuildName,
-                            Environment: SelectedDeploymentEnvironment.Name,
                             Name: "activateflow.activate." & Substitute(
                                 name,
                                 " ",
@@ -3082,8 +3071,6 @@ DeploymentSettingsScreen As screen:
                     Collect(
                         DeploymentSettings,
                         {
-                            Build: SelectedDeploymentEnvironment.BuildName,
-                            Environment: SelectedDeploymentEnvironment.Name,
                             Name: "groupTeam." & Id & "." & txtGroupTeamName.Text,
                             Value: drpGroupTeamGroups.Selected.id,
                             Data: Concat(
@@ -3099,8 +3086,6 @@ DeploymentSettingsScreen As screen:
                     Collect(
                         DeploymentSettings,
                         {
-                            Build: SelectedDeploymentEnvironment.BuildName,
-                            Environment: SelectedDeploymentEnvironment.Name,
                             Name: "connector.teamname." & Substitute(
                                 displayname,
                                 " ",
@@ -3110,6 +3095,7 @@ DeploymentSettingsScreen As screen:
                         }
                     )
                 );
+                Collect(DeploymentSettings,{Name: "TriggerSolutionUpgrade",Value: Text(chkUpgradeSolution.Value)});
                 //Convert settings to json and store in user settings
                 UpdateContext({settingsJsonText: JSON(DeploymentSettings)});
                 UpdateContext({locSolutionEnvironmentDeploySettingName: DeploymentSettingName & " - " & glrSolutions.Selected.uniquename & " - " & SelectedDeploymentEnvironment.EnvironmentUrl});
@@ -3233,7 +3219,7 @@ DeploymentSettingsScreen As screen:
                                     "There are no flows in this solution",
                                     If(
                                         glrGroupTeams.Visible,
-                                        "There are no group teams in this solution. Select + to get started."
+                                        "Select + to create a new dataverse team to sync with an Azure AD security group (optional). "
                                     )
                                 )
                             )
@@ -3324,7 +3310,7 @@ DeploymentSettingsScreen As screen:
             Width: =160
             X: =1714
             Y: =241
-            ZIndex: =37
+            ZIndex: =36
 
         icoAddNewGroupTeam As icon.Add:
             AccessibleLabel: ="Refresh"
@@ -3360,6 +3346,24 @@ DeploymentSettingsScreen As screen:
             Width: =45
             X: =1822
             Y: =215
+            ZIndex: =37
+
+        chkUpgradeSolution As checkbox:
+            Default: =If(solutionupgradetag="true",true,false)
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            HoverBorderColor: =ColorFade(chkUpgradeSolution.BorderColor, 20%)
+            HoverColor: =ColorFade(chkUpgradeSolution.Color, 20%)
+            HoverFill: =ColorFade(chkUpgradeSolution.Fill, 20%)
+            PressedBorderColor: =ColorFade(chkUpgradeSolution.BorderColor, -20%)
+            PressedColor: =ColorFade(chkUpgradeSolution.Color, -20%)
+            PressedFill: =ColorFade(chkUpgradeSolution.Fill, -20%)
+            Text: ="Upgrade Solution"
+            Tooltip: ="If components have been removed that already exist in the target environment, select Upgrade Solution to ensure they are removed in the target environment."
+            Visible: =!showSolutionComponentLoader
+            Width: =219
+            X: =1665
+            Y: =135
             ZIndex: =38
 
         loaderSolutionComponents As Preloader:
@@ -3502,11 +3506,12 @@ DeploymentSettingsScreen As screen:
             HoverBorderColor: =ColorFade(fncLoadEnvironmentDeploymentSettings.BorderColor, 20%)
             HoverColor: =ColorFade(fncLoadEnvironmentDeploymentSettings.Color, 20%)
             HoverFill: =ColorFade(fncLoadEnvironmentDeploymentSettings.Fill, 20%)
-            OnSelect: |
+            OnSelect: |-
                 =UpdateContext(
                     {
                         showSolutionComponentLoader: true,
-                        DeploymentSettingsLoadingText: "LOADING DEPLOYMENT ENVIRONMENT CONFIGURATION..."
+                        DeploymentSettingsLoadingText: "LOADING DEPLOYMENT ENVIRONMENT CONFIGURATION...",
+                        solutionupgradetag: "false"
                     }
                 );
                 If(
@@ -3529,7 +3534,14 @@ DeploymentSettingsScreen As screen:
                         IsBlank(locEnvironmentDeploymentSetting.Data),
                         UpdateContext({EnvironmentDeploymentSettings: ParseDeploymentSettings.Run("[]")}),
                         UpdateContext({EnvironmentDeploymentSettings: ParseDeploymentSettings.Run(locEnvironmentDeploymentSetting.Data)})
-                    );
+                    );    
+                	// Read SolutionUpgrade tag
+                	UpdateContext({solutionupgradetag: 
+                			 LookUp(
+                                        EnvironmentDeploymentSettings,
+                                        Name = "TriggerSolutionUpgrade"
+                                    ).Value
+                			});
                     Concurrent(
                         ClearCollect(
                             EnvironmentTeams,
@@ -3809,7 +3821,8 @@ DeploymentSettingsScreen As screen:
                                         SelectedDeploymentEnvironment.EnvironmentUrl in properties.linkedEnvironmentMetadata.instanceUrl,
                                         name
                                     ) & "'",
-                                    'api-version': "2016-11-01"
+                                    'api-version': "2016-11-01",
+                                    '$top': 500
                                 }
                             ).value,
                             "DisplayName",

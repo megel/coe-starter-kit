@@ -1,6 +1,20 @@
 {
     "ActivateFlowConfiguration":  [
                                       {
+                                          "solutionComponentName":  "CLEANUP HELPER - Check Deleted (Solutions)",
+                                          "solutionComponentUniqueName":  "04b5f2be-08f7-ec11-bb3d-000d3a10bc1d",
+                                          "activateAsUser":  "#{activateflow.activateas.CLEANUPHELPER-CheckDeleted(Solutions).04b5f2be-08f7-ec11-bb3d-000d3a10bc1d}#",
+                                          "sortOrder":  "#{activateflow.order.CLEANUPHELPER-CheckDeleted(Solutions).04b5f2be-08f7-ec11-bb3d-000d3a10bc1d}#",
+                                          "activate":  "#{activateflow.activate.CLEANUPHELPER-CheckDeleted(Solutions).04b5f2be-08f7-ec11-bb3d-000d3a10bc1d}#"
+                                      },
+                                      {
+                                          "solutionComponentName":  "Admin | Sync Template v3 (Solutions)",
+                                          "solutionComponentUniqueName":  "ee5e288e-42f2-ec11-bb3d-000d3a1342bf",
+                                          "activateAsUser":  "#{activateflow.activateas.Admin|SyncTemplatev3(Solutions).ee5e288e-42f2-ec11-bb3d-000d3a1342bf}#",
+                                          "sortOrder":  "#{activateflow.order.Admin|SyncTemplatev3(Solutions).ee5e288e-42f2-ec11-bb3d-000d3a1342bf}#",
+                                          "activate":  "#{activateflow.activate.Admin|SyncTemplatev3(Solutions).ee5e288e-42f2-ec11-bb3d-000d3a1342bf}#"
+                                      },
+                                      {
                                           "solutionComponentName":  "Admin | Excuse Support Envts from Governance Flows",
                                           "solutionComponentUniqueName":  "6d77f624-a761-ec11-8f8f-000d3a13d289",
                                           "activateAsUser":  "#{activateflow.activateas.Admin|ExcuseSupportEnvtsfromGovernanceFlows.6d77f624-a761-ec11-8f8f-000d3a13d289}#",
@@ -288,6 +302,20 @@
                                           "activate":  "#{activateflow.activate.PowerAppsAppApprovalBPF.ffa183a6-76d6-4ec9-aee6-a558129651a2}#"
                                       },
                                       {
+                                          "solutionComponentName":  "Admin | Sync Template v3 (Business Process Flows)",
+                                          "solutionComponentUniqueName":  "a3f8f6e9-82ed-ec11-bb3d-000d3a8fbe6e",
+                                          "activateAsUser":  "#{activateflow.activateas.Admin|SyncTemplatev3(BusinessProcessFlows).a3f8f6e9-82ed-ec11-bb3d-000d3a8fbe6e}#",
+                                          "sortOrder":  "#{activateflow.order.Admin|SyncTemplatev3(BusinessProcessFlows).a3f8f6e9-82ed-ec11-bb3d-000d3a8fbe6e}#",
+                                          "activate":  "#{activateflow.activate.Admin|SyncTemplatev3(BusinessProcessFlows).a3f8f6e9-82ed-ec11-bb3d-000d3a8fbe6e}#"
+                                      },
+                                      {
+                                          "solutionComponentName":  "CLEANUP HELPER - Check Deleted (Business Process Flows)",
+                                          "solutionComponentUniqueName":  "bc9de9b5-a8ed-ec11-bb3d-000d3a8fbe6e",
+                                          "activateAsUser":  "#{activateflow.activateas.CLEANUPHELPER-CheckDeleted(BusinessProcessFlows).bc9de9b5-a8ed-ec11-bb3d-000d3a8fbe6e}#",
+                                          "sortOrder":  "#{activateflow.order.CLEANUPHELPER-CheckDeleted(BusinessProcessFlows).bc9de9b5-a8ed-ec11-bb3d-000d3a8fbe6e}#",
+                                          "activate":  "#{activateflow.activate.CLEANUPHELPER-CheckDeleted(BusinessProcessFlows).bc9de9b5-a8ed-ec11-bb3d-000d3a8fbe6e}#"
+                                      },
+                                      {
                                           "solutionComponentName":  "DLP Editor\u003eParse impacted resources into CSV",
                                           "solutionComponentUniqueName":  "3acddf40-8d5e-ec11-8f8f-0022481d6e1e",
                                           "activateAsUser":  "#{activateflow.activateas.DLPEditor\u003eParseimpactedresourcesintoCSV.3acddf40-8d5e-ec11-8f8f-0022481d6e1e}#",
@@ -386,6 +414,13 @@
                                           "activate":  "#{activateflow.activate.CLEANUPHELPER-CheckDeleted(ModelDrivenApps).9a470548-58fc-eb11-94ef-002248237f74}#"
                                       },
                                       {
+                                          "solutionComponentName":  "Admin | Sync Template v3 (Connection Identities)",
+                                          "solutionComponentUniqueName":  "7deee377-b0d1-ec11-a7b5-002248250ae2",
+                                          "activateAsUser":  "#{activateflow.activateas.Admin|SyncTemplatev3(ConnectionIdentities).7deee377-b0d1-ec11-a7b5-002248250ae2}#",
+                                          "sortOrder":  "#{activateflow.order.Admin|SyncTemplatev3(ConnectionIdentities).7deee377-b0d1-ec11-a7b5-002248250ae2}#",
+                                          "activate":  "#{activateflow.activate.Admin|SyncTemplatev3(ConnectionIdentities).7deee377-b0d1-ec11-a7b5-002248250ae2}#"
+                                      },
+                                      {
                                           "solutionComponentName":  "DLP Request | Sync Policy to Dataverse (Child)",
                                           "solutionComponentUniqueName":  "e55e412f-bf69-ec11-8943-002248266489",
                                           "activateAsUser":  "#{activateflow.activateas.DLPRequest|SyncPolicytoDataverse(Child).e55e412f-bf69-ec11-8943-002248266489}#",
@@ -405,6 +440,13 @@
                                           "activateAsUser":  "#{activateflow.activateas.HELPER-ObjectOperations.6fda1b2d-3904-ec11-94ef-00224826a4d2}#",
                                           "sortOrder":  "#{activateflow.order.HELPER-ObjectOperations.6fda1b2d-3904-ec11-94ef-00224826a4d2}#",
                                           "activate":  "#{activateflow.activate.HELPER-ObjectOperations.6fda1b2d-3904-ec11-94ef-00224826a4d2}#"
+                                      },
+                                      {
+                                          "solutionComponentName":  "Admin | Sync Template v3 CoE Solution Metadata",
+                                          "solutionComponentUniqueName":  "f67e1e35-4cd5-ec11-a7b5-0022482783b7",
+                                          "activateAsUser":  "#{activateflow.activateas.Admin|SyncTemplatev3CoESolutionMetadata.f67e1e35-4cd5-ec11-a7b5-0022482783b7}#",
+                                          "sortOrder":  "#{activateflow.order.Admin|SyncTemplatev3CoESolutionMetadata.f67e1e35-4cd5-ec11-a7b5-0022482783b7}#",
+                                          "activate":  "#{activateflow.activate.Admin|SyncTemplatev3CoESolutionMetadata.f67e1e35-4cd5-ec11-a7b5-0022482783b7}#"
                                       },
                                       {
                                           "solutionComponentName":  "Admin | Compliance Teams Environment BPF kickoff v3",
@@ -471,6 +513,18 @@
                                                      }
                                                  ],
     "SolutionComponentOwnershipConfiguration":  [
+                                                    {
+                                                        "solutionComponentType":  29,
+                                                        "solutionComponentName":  "CLEANUP HELPER - Check Deleted (Solutions)",
+                                                        "solutionComponentUniqueName":  "04b5f2be-08f7-ec11-bb3d-000d3a10bc1d",
+                                                        "ownerEmail":  "#{owner.ownerEmail.CLEANUPHELPER-CheckDeleted(Solutions).04b5f2be-08f7-ec11-bb3d-000d3a10bc1d}#"
+                                                    },
+                                                    {
+                                                        "solutionComponentType":  29,
+                                                        "solutionComponentName":  "Admin | Sync Template v3 (Solutions)",
+                                                        "solutionComponentUniqueName":  "ee5e288e-42f2-ec11-bb3d-000d3a1342bf",
+                                                        "ownerEmail":  "#{owner.ownerEmail.Admin|SyncTemplatev3(Solutions).ee5e288e-42f2-ec11-bb3d-000d3a1342bf}#"
+                                                    },
                                                     {
                                                         "solutionComponentType":  29,
                                                         "solutionComponentName":  "Admin | Excuse Support Envts from Governance Flows",
@@ -719,6 +773,18 @@
                                                     },
                                                     {
                                                         "solutionComponentType":  29,
+                                                        "solutionComponentName":  "Admin | Sync Template v3 (Business Process Flows)",
+                                                        "solutionComponentUniqueName":  "a3f8f6e9-82ed-ec11-bb3d-000d3a8fbe6e",
+                                                        "ownerEmail":  "#{owner.ownerEmail.Admin|SyncTemplatev3(BusinessProcessFlows).a3f8f6e9-82ed-ec11-bb3d-000d3a8fbe6e}#"
+                                                    },
+                                                    {
+                                                        "solutionComponentType":  29,
+                                                        "solutionComponentName":  "CLEANUP HELPER - Check Deleted (Business Process Flows)",
+                                                        "solutionComponentUniqueName":  "bc9de9b5-a8ed-ec11-bb3d-000d3a8fbe6e",
+                                                        "ownerEmail":  "#{owner.ownerEmail.CLEANUPHELPER-CheckDeleted(BusinessProcessFlows).bc9de9b5-a8ed-ec11-bb3d-000d3a8fbe6e}#"
+                                                    },
+                                                    {
+                                                        "solutionComponentType":  29,
                                                         "solutionComponentName":  "DLP Editor\u003eParse impacted resources into CSV",
                                                         "solutionComponentUniqueName":  "3acddf40-8d5e-ec11-8f8f-0022481d6e1e",
                                                         "ownerEmail":  "#{owner.ownerEmail.DLPEditor\u003eParseimpactedresourcesintoCSV.3acddf40-8d5e-ec11-8f8f-0022481d6e1e}#"
@@ -803,6 +869,12 @@
                                                     },
                                                     {
                                                         "solutionComponentType":  29,
+                                                        "solutionComponentName":  "Admin | Sync Template v3 (Connection Identities)",
+                                                        "solutionComponentUniqueName":  "7deee377-b0d1-ec11-a7b5-002248250ae2",
+                                                        "ownerEmail":  "#{owner.ownerEmail.Admin|SyncTemplatev3(ConnectionIdentities).7deee377-b0d1-ec11-a7b5-002248250ae2}#"
+                                                    },
+                                                    {
+                                                        "solutionComponentType":  29,
                                                         "solutionComponentName":  "DLP Request | Sync Policy to Dataverse (Child)",
                                                         "solutionComponentUniqueName":  "e55e412f-bf69-ec11-8943-002248266489",
                                                         "ownerEmail":  "#{owner.ownerEmail.DLPRequest|SyncPolicytoDataverse(Child).e55e412f-bf69-ec11-8943-002248266489}#"
@@ -818,6 +890,12 @@
                                                         "solutionComponentName":  "HELPER - ObjectOperations",
                                                         "solutionComponentUniqueName":  "6fda1b2d-3904-ec11-94ef-00224826a4d2",
                                                         "ownerEmail":  "#{owner.ownerEmail.HELPER-ObjectOperations.6fda1b2d-3904-ec11-94ef-00224826a4d2}#"
+                                                    },
+                                                    {
+                                                        "solutionComponentType":  29,
+                                                        "solutionComponentName":  "Admin | Sync Template v3 CoE Solution Metadata",
+                                                        "solutionComponentUniqueName":  "f67e1e35-4cd5-ec11-a7b5-0022482783b7",
+                                                        "ownerEmail":  "#{owner.ownerEmail.Admin|SyncTemplatev3CoESolutionMetadata.f67e1e35-4cd5-ec11-a7b5-0022482783b7}#"
                                                     },
                                                     {
                                                         "solutionComponentType":  29,
@@ -869,6 +947,16 @@
                                                     }
                                                 ],
     "FlowShareWithGroupTeamConfiguration":  [
+                                                {
+                                                    "solutionComponentName":  "CLEANUP HELPER - Check Deleted (Solutions)",
+                                                    "solutionComponentUniqueName":  "04b5f2be-08f7-ec11-bb3d-000d3a10bc1d",
+                                                    "aadGroupTeamName":  "#{flow.sharing.CLEANUPHELPER-CheckDeleted(Solutions).04b5f2be-08f7-ec11-bb3d-000d3a10bc1d}#"
+                                                },
+                                                {
+                                                    "solutionComponentName":  "Admin | Sync Template v3 (Solutions)",
+                                                    "solutionComponentUniqueName":  "ee5e288e-42f2-ec11-bb3d-000d3a1342bf",
+                                                    "aadGroupTeamName":  "#{flow.sharing.Admin|SyncTemplatev3(Solutions).ee5e288e-42f2-ec11-bb3d-000d3a1342bf}#"
+                                                },
                                                 {
                                                     "solutionComponentName":  "Admin | Excuse Support Envts from Governance Flows",
                                                     "solutionComponentUniqueName":  "6d77f624-a761-ec11-8f8f-000d3a13d289",
@@ -1075,6 +1163,16 @@
                                                     "aadGroupTeamName":  "#{flow.sharing.PowerAppsAppApprovalBPF.ffa183a6-76d6-4ec9-aee6-a558129651a2}#"
                                                 },
                                                 {
+                                                    "solutionComponentName":  "Admin | Sync Template v3 (Business Process Flows)",
+                                                    "solutionComponentUniqueName":  "a3f8f6e9-82ed-ec11-bb3d-000d3a8fbe6e",
+                                                    "aadGroupTeamName":  "#{flow.sharing.Admin|SyncTemplatev3(BusinessProcessFlows).a3f8f6e9-82ed-ec11-bb3d-000d3a8fbe6e}#"
+                                                },
+                                                {
+                                                    "solutionComponentName":  "CLEANUP HELPER - Check Deleted (Business Process Flows)",
+                                                    "solutionComponentUniqueName":  "bc9de9b5-a8ed-ec11-bb3d-000d3a8fbe6e",
+                                                    "aadGroupTeamName":  "#{flow.sharing.CLEANUPHELPER-CheckDeleted(BusinessProcessFlows).bc9de9b5-a8ed-ec11-bb3d-000d3a8fbe6e}#"
+                                                },
+                                                {
                                                     "solutionComponentName":  "DLP Editor\u003eParse impacted resources into CSV",
                                                     "solutionComponentUniqueName":  "3acddf40-8d5e-ec11-8f8f-0022481d6e1e",
                                                     "aadGroupTeamName":  "#{flow.sharing.DLPEditor\u003eParseimpactedresourcesintoCSV.3acddf40-8d5e-ec11-8f8f-0022481d6e1e}#"
@@ -1145,6 +1243,11 @@
                                                     "aadGroupTeamName":  "#{flow.sharing.CLEANUPHELPER-CheckDeleted(ModelDrivenApps).9a470548-58fc-eb11-94ef-002248237f74}#"
                                                 },
                                                 {
+                                                    "solutionComponentName":  "Admin | Sync Template v3 (Connection Identities)",
+                                                    "solutionComponentUniqueName":  "7deee377-b0d1-ec11-a7b5-002248250ae2",
+                                                    "aadGroupTeamName":  "#{flow.sharing.Admin|SyncTemplatev3(ConnectionIdentities).7deee377-b0d1-ec11-a7b5-002248250ae2}#"
+                                                },
+                                                {
                                                     "solutionComponentName":  "DLP Request | Sync Policy to Dataverse (Child)",
                                                     "solutionComponentUniqueName":  "e55e412f-bf69-ec11-8943-002248266489",
                                                     "aadGroupTeamName":  "#{flow.sharing.DLPRequest|SyncPolicytoDataverse(Child).e55e412f-bf69-ec11-8943-002248266489}#"
@@ -1158,6 +1261,11 @@
                                                     "solutionComponentName":  "HELPER - ObjectOperations",
                                                     "solutionComponentUniqueName":  "6fda1b2d-3904-ec11-94ef-00224826a4d2",
                                                     "aadGroupTeamName":  "#{flow.sharing.HELPER-ObjectOperations.6fda1b2d-3904-ec11-94ef-00224826a4d2}#"
+                                                },
+                                                {
+                                                    "solutionComponentName":  "Admin | Sync Template v3 CoE Solution Metadata",
+                                                    "solutionComponentUniqueName":  "f67e1e35-4cd5-ec11-a7b5-0022482783b7",
+                                                    "aadGroupTeamName":  "#{flow.sharing.Admin|SyncTemplatev3CoESolutionMetadata.f67e1e35-4cd5-ec11-a7b5-0022482783b7}#"
                                                 },
                                                 {
                                                     "solutionComponentName":  "Admin | Compliance Teams Environment BPF kickoff v3",

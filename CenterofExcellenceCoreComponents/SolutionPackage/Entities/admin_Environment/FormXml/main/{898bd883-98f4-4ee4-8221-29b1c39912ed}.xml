@@ -60,14 +60,6 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{44b5237f-4d38-468e-8d1f-37f218f4a8c6}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Created On" languagecode="1033" />
-                        </labels>
-                        <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
-                      </cell>
-                    </row>
-                    <row>
                       <cell id="{21d92291-ec3e-480f-b471-ad77517c85f9}" locklevel="0">
                         <labels>
                           <label description="Environment Modified On" languagecode="1033" />
@@ -84,9 +76,17 @@
                       </cell>
                     </row>
                     <row>
+                      <cell id="{b38681a6-293b-4d27-90ad-5d50d93a3edf}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Governance Protection Level" languagecode="1033" />
+                        </labels>
+                        <control id="admin_governanceprotectionlevel" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="admin_governanceprotectionlevel" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
                       <cell id="{34fd187d-56bb-41b9-a048-cdc3a1c73da0}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Excuse From Archival Flows" languagecode="1033" />
+                          <label description="Excuse From Inactivity Flows" languagecode="1033" />
                         </labels>
                         <control id="admin_excusefromarchivalflows" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="admin_excusefromarchivalflows" disabled="false" />
                       </cell>
@@ -121,6 +121,14 @@
                           <label description="Environment is Orphaned" languagecode="1033" />
                         </labels>
                         <control id="admin_environmentisorphaned" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="admin_environmentisorphaned" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{312478cf-5b3b-4294-9b6e-8bd8da1e0fa3}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Environment External Connection Count" languagecode="1033" />
+                        </labels>
+                        <control id="admin_environmentexternalconnectioncount" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="admin_environmentexternalconnectioncount" disabled="false" />
                       </cell>
                     </row>
                   </rows>
@@ -170,6 +178,14 @@
                           <label description="Environment Purpose" languagecode="1033" />
                         </labels>
                         <control id="admin_environmentpurpose" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="admin_environmentpurpose" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1bd5f6e9-f89a-4a55-a817-90be6955e3d6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Environment Purpose Text" languagecode="1033" />
+                        </labels>
+                        <control id="admin_environmentpurposetext" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="admin_environmentpurposetext" disabled="true" />
                       </cell>
                     </row>
                   </rows>

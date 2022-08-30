@@ -88,7 +88,6 @@ HomeScreen As screen:
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(4,45,81,1.00)
             HoverFill: =RGBA(0, 0, 0, 0)
-            OnSelect: =Select(Parent)
             PressedBorderColor: =RGBA(0, 0, 0, 0)
             PressedColor: =RGBA(4,45,81,1.00)
             PressedFill: =RGBA(0, 0, 0, 0)
@@ -225,6 +224,9 @@ HomeScreen As screen:
             PressedColor: =RGBA(4,45,81,1.00)
             PressedFill: =RGBA(0, 0, 0, 0)
             Text: =ThisItem.'Display Name'
+            Tooltip: |-
+                ="Envt ID: " & ThisItem.Environment & "
+                Envt Sku: " & ThisItem.'Environment Sku'
             Width: =300
             X: =76
             Y: =1

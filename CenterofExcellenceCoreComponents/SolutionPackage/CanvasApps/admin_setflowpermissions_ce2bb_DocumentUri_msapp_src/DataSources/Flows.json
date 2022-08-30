@@ -17,6 +17,9 @@
       "admin_ArchiveApproval_FlowLookup_admin_Fl": "Archive Approvals",
       "admin_city": "City",
       "admin_company": "Company",
+      "admin_compliancerequestedon": "Compliance Requested on",
+      "admin_containsaibuilder": "Contains AI Builder",
+      "admin_containsplaintextpassword": "Contains Plain Text Password",
       "admin_country": "Country",
       "admin_department": "Department",
       "admin_DerivedOwner": "DerivedOwner",
@@ -48,13 +51,17 @@
       "admin_flowidstring": "FlowIDString",
       "admin_flowmakerdisplayname": "Flow Maker Display Name",
       "admin_flowmodifiedon": "Flow Modified On",
+      "admin_flowpendingsuspensionon": "Flow Pending Suspension On",
+      "admin_flowpendingsuspensionreason": "Flow Pending Suspension Reason",
       "admin_FlowResource_Flow": "Flow Resources",
       "admin_flowstate": "Flow State",
+      "admin_flowsuspensionreason": "Flow Suspension Reason",
       "admin_issolutionflow": "isSolutionFlow",
       "admin_makerrequirementdependencies": "Maker Requirement - Dependencies",
       "admin_makersubmittedrequirements": "Maker Submitted Requirements",
       "admin_mitigationplanprovided": "Mitigation Plan Provided",
       "admin_PowerPlatformUserRole_Flow_admin_Fl": "Power Platform User Roles",
+      "admin_PPSolution_Flow": "Power Platform Solutions",
       "admin_PVAComponentFlowLookup_Flow_admin_F": "PVA Component Flow Lookups",
       "admin_recordmodified": "Record Modified",
       "admin_rel_FlowConnectionReference": "Connection References",
@@ -128,6 +135,26 @@
     },
     "OptionSetTypeKey": "BooleanType",
     "RelatedColumnInvariantName": "admin_adminrequirementreviewedflow",
+    "RelatedEntityName": "Flows",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Contains AI Builder (Flows)",
+    "Name": "admin_admin_flow_containsaibuilder",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "admin_containsaibuilder",
+        "OptionSetReferenceEntityName": "Flows"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "admin_containsaibuilder",
     "RelatedEntityName": "Flows",
     "Type": "OptionSetInfo"
   },
@@ -230,6 +257,26 @@
     },
     "OptionSetTypeKey": "PicklistType",
     "RelatedColumnInvariantName": "admin_adminrequirementriskassessmentstate",
+    "RelatedEntityName": "Flows",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Contains Plain Text Password (Flows)",
+    "Name": "admin_flow_admin_containsplaintextpassword",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "admin_containsplaintextpassword",
+        "OptionSetReferenceEntityName": "Flows"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "admin_containsplaintextpassword",
     "RelatedEntityName": "Flows",
     "Type": "OptionSetInfo"
   },

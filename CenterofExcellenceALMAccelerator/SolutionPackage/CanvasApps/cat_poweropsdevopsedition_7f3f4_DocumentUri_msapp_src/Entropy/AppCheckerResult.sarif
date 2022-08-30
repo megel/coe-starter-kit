@@ -254,6 +254,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Home.DeploymentProfileDialog.icoProfileOpenInAdmin.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Home.DeploymentProfileDialog.icoProfileOpenInAdmin.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Home",
+                "type": "Home.DeploymentProfileDialog.icoProfileOpenInAdmin"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Home.DeploymentProfileDialog.icoProfileClose.TabIndex"
                 }
               ],
@@ -704,6 +734,126 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Home.icoReportIssue.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Home.icoReportIssue.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Home",
+                "type": "Home.icoReportIssue"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Home.icoReportIssue.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Home.icoReportIssue.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Home",
+                "type": "Home.icoReportIssue"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Home.icoHelp.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Home.icoHelp.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Home",
+                "type": "Home.icoHelp"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Home.icoHelp.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Home.icoHelp.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Home",
+                "type": "Home.icoHelp"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Home.lblEnvironmentName.TabIndex"
                 }
               ],
@@ -824,19 +974,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Home.EnvironmentDialog.glrlEnvironments.lblEnvironments.TabIndex"
+                  "fullyQualifiedName": "Home.EnvironmentDialog.glrlEnvironments.icoSelectEnvironmentOverlay.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Home.EnvironmentDialog.glrlEnvironments.lblEnvironments.TabIndex",
+                  "fullyQualifiedName": "Home.EnvironmentDialog.glrlEnvironments.icoSelectEnvironmentOverlay.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "TabIndex",
+                "member": "AccessibleLabel",
                 "module": "Home",
-                "type": "Home.EnvironmentDialog.glrlEnvironments.lblEnvironments"
+                "type": "Home.EnvironmentDialog.glrlEnvironments.icoSelectEnvironmentOverlay"
               }
             }
           ],
@@ -846,27 +996,27 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 0
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Home.EnvironmentDialog.glrlEnvironments.imgEnvironment_3.TabIndex"
+                  "fullyQualifiedName": "Home.EnvironmentDialog.glrlEnvironments.icoSelectEnvironmentOverlay.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Home.EnvironmentDialog.glrlEnvironments.imgEnvironment_3.TabIndex",
+                  "fullyQualifiedName": "Home.EnvironmentDialog.glrlEnvironments.icoSelectEnvironmentOverlay.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Home",
-                "type": "Home.EnvironmentDialog.glrlEnvironments.imgEnvironment_3"
+                "type": "Home.EnvironmentDialog.glrlEnvironments.icoSelectEnvironmentOverlay"
               }
             }
           ],
@@ -3524,36 +3674,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "DeploymentSettingsScreen.DeploymentSettingsDialog.glrGroupTeams.icoFilterTeamsGroups.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "DeploymentSettingsScreen.DeploymentSettingsDialog.glrGroupTeams.icoFilterTeamsGroups.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "DeploymentSettingsScreen",
-                "type": "DeploymentSettingsScreen.DeploymentSettingsDialog.glrGroupTeams.icoFilterTeamsGroups"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "DeploymentSettingsScreen.DeploymentSettingsDialog.glrGroupTeams.icoFilterTeamsGroups.AccessibleLabel"
                 }
               ],
@@ -3578,6 +3698,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "DeploymentSettingsScreen.DeploymentSettingsDialog.glrGroupTeams.icoFilterTeamsGroups.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "DeploymentSettingsScreen.DeploymentSettingsDialog.glrGroupTeams.icoFilterTeamsGroups.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "DeploymentSettingsScreen",
+                "type": "DeploymentSettingsScreen.DeploymentSettingsDialog.glrGroupTeams.icoFilterTeamsGroups"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -4154,6 +4304,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.dsRegion"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.dsRegion",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "dsRegion",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.SelectedStep"
                 }
               ],
@@ -4633,6 +4813,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Home.activePRExists"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Home.activePRExists",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "activePRExists",
+                "module": "Home",
+                "type": "Home"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Home.debugText"
                 }
               ],
@@ -4674,6 +4884,36 @@
               },
               "properties": {
                 "member": "locBranch",
+                "module": "Home",
+                "type": "Home"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Home.pullRequestStatus"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Home.pullRequestStatus",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "pullRequestStatus",
                 "module": "Home",
                 "type": "Home"
               }
@@ -4839,11 +5079,11 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"Home\" is 332, which exceeds the maximum threshold recommended (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"Home\" is 343, which exceeds the maximum threshold recommended (300)."
               }
             }
           ],
-          "version": "1.324"
+          "version": "1.326"
         }
       }
     }

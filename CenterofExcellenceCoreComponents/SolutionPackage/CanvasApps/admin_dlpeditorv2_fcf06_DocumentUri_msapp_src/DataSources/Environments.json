@@ -11,6 +11,8 @@
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
       "{Attachments}": "Attachments",
+      "admin_admin_businessprocessflows_BusinessProces": "Business Process Flows",
+      "admin_admin_solution_SolutionEnvironment_admin_": "Power Platform Solutions",
       "admin_adminmicrosoftteamsenvironmentstatus": "Admin - Microsoft Teams Environment Status",
       "admin_adminreason": "Admin - Status Reason",
       "admin_adminreviewon": "Admin - Review Teams Environment Status On",
@@ -18,6 +20,7 @@
       "admin_BusinessArea": "Business Area",
       "admin_businessjustificationdate": "Date Asked for Business Justification",
       "admin_connectedgroupid": "Connected Group ID",
+      "admin_ConnectionReferenceIdentity_admin_E": "Connection Reference Identities",
       "admin_DataverseTables_Environment_admin_E": "Dataverse Tables",
       "admin_displayname": "Display Name",
       "admin_environment_Annotations": "Notes",
@@ -36,6 +39,9 @@
       "admin_environmentcreatedon": "Environment Created On",
       "admin_environmentdeleted": "Environment Deleted",
       "admin_environmentdeletedon": "Environment Deleted On",
+      "admin_environmentexternalconnectioncount": "Environment External Connection Count",
+      "admin_environmentexternalconnectioncount_date": "Environment External Connection Count (Last Updated On)",
+      "admin_environmentexternalconnectioncount_state": "Environment External Connection Count (State)",
       "admin_environmentid": "Environment",
       "admin_environmentisorphaned": "Environment is Orphaned",
       "admin_environmentmakerdisplayname": "Environment Maker Display Name",
@@ -44,13 +50,16 @@
       "admin_environmentname": "Name",
       "admin_environmentowner": "Environment Owner",
       "admin_environmentpurpose": "Environment Purpose",
+      "admin_environmentpurposetext": "Environment Purpose Text",
       "admin_environmentsku": "Environment Sku",
       "admin_excusefromappquarantineflow": "Excuse From App Quarantine Flow",
       "admin_excusefromarchivalflows": "Excuse From Archival Flows",
       "admin_excusefromcomplianceflow": "Excuse From Compliance Flow",
       "admin_Flow_FlowEnvironment_admin_Environm": "Flows",
       "admin_FlowActionDetail_FlowActionDetailEn": "Flow Action Details",
+      "admin_governanceprotectionlevel": "Governance Protection Level",
       "admin_hascds": "hasCDS",
+      "admin_hasdlppolicy": "Has DLP Policy",
       "admin_iscoe": "isCOE",
       "admin_Maker": "Environment Maker",
       "admin_makerrequirementbusinessimpact": "Maker Requirement - Business Impact",
@@ -67,9 +76,10 @@
       "admin_numberofflows_date": "Number Of Flows (Last Updated On)",
       "admin_numberofflows_state": "Number Of Flows (State)",
       "admin_policy_environments": "DLP Policies",
-      "admin_PortalEnvironment": "Power Apps Portals",
+      "admin_PortalEnvironment": "Power Pages Sites",
       "admin_PowerPlatformUserRole_Environment_a": "Power Platform User Roles",
       "admin_PVAComponent_ComponentEnvt_admin_En": "PVA Components",
+      "admin_recordguidasstring": "Record GUID as String",
       "admin_region": "Environment Region",
       "admin_rel_AppEnvironment": "PowerApps Apps",
       "admin_rel_Environment_CustomConnector": "PowerApps Connectors",
@@ -116,7 +126,8 @@
       "5a4ff862-63ee-4b61-bf91-e15901265488": "Active Environments",
       "937103b5-3aa3-4676-bb46-4cf683676ea9": "Environment Advanced Find View",
       "9f1878e0-09d2-4ce3-ad63-297e45462903": "Inactive Environments",
-      "ddcf9381-5f23-eb11-a813-000d3a8c389b": "Microsoft Teams Environment Review"
+      "ddcf9381-5f23-eb11-a813-000d3a8c389b": "Microsoft Teams Environment Review",
+      "e754de97-2b01-ed11-82e4-000d3a9d9809": "Managed Environments"
     }
   },
   {
@@ -216,6 +227,26 @@
     },
     "OptionSetTypeKey": "BooleanType",
     "RelatedColumnInvariantName": "admin_hascds",
+    "RelatedEntityName": "Environments",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Has DLP Policy (Environments)",
+    "Name": "admin_admin_environment_hasdlppolicy",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "admin_hasdlppolicy",
+        "OptionSetReferenceEntityName": "Environments"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "admin_hasdlppolicy",
     "RelatedEntityName": "Environments",
     "Type": "OptionSetInfo"
   },

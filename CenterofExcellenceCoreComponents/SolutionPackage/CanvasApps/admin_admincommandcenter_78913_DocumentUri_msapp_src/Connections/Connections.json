@@ -6,7 +6,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Power Automate Management",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1547/1.0.1547.2676/flowmanagement/icon.png",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1586/1.0.1586.2912/flowmanagement/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_flowmanagement",
       "parameterHints": {},
       "parameterHintsV2": {}
@@ -28,7 +28,7 @@
     "connectionRef": {
       "apiTier": "Premium",
       "displayName": "Microsoft Dataverse",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1566/1.0.1566.2741/commondataserviceforapps/icon.png",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1586/1.0.1586.2912/commondataserviceforapps/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps",
       "parameterHints": {},
       "parameterHintsV2": {}
@@ -49,7 +49,7 @@
     "connectionRef": {
       "apiTier": "Premium",
       "displayName": "Microsoft Dataverse",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1566/1.0.1566.2741/commondataserviceforapps/icon.png",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1586/1.0.1586.2912/commondataserviceforapps/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps",
       "parameterHints": {},
       "parameterHintsV2": {}
@@ -209,7 +209,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Office 365 Outlook",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1570/1.0.1570.2764/office365/icon.png",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1580/1.0.1580.2838/office365/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_office365",
       "parameterHints": {},
       "parameterHintsV2": {}
@@ -229,7 +229,7 @@
     "connectionRef": {
       "apiTier": "Standard",
       "displayName": "Office 365 Users",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1563/1.0.1563.2732/office365users/icon.png",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1573/1.0.1573.2770/office365users/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_office365users",
       "parameterHints": {},
       "parameterHintsV2": {}
@@ -314,7 +314,7 @@
       "apiTier": "Standard",
       "authenticationType": "firstParty",
       "displayName": "Power Automate Management",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1547/1.0.1547.2676/flowmanagement/icon.png",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1586/1.0.1586.2912/flowmanagement/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_flowmanagement",
       "parameterHints": {},
       "parameterHintsV2": {}

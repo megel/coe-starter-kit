@@ -73,6 +73,10 @@
                                      "Value":  "#{environmentvariable.admin_PowerAppEnvironmentVariable}#"
                                  },
                                  {
+                                     "SchemaName":  "admin_GraphURLEnvironmentVariable",
+                                     "Value":  "#{environmentvariable.admin_GraphURLEnvironmentVariable}#"
+                                 },
+                                 {
                                      "SchemaName":  "coe_EnvironmentRequestAdminAppUrl",
                                      "Value":  "#{environmentvariable.coe_EnvironmentRequestAdminAppUrl}#"
                                  },
@@ -104,6 +108,11 @@
                                      "SchemaName":  "admin_CommandCenterApplicationClientID",
                                      "Value":  "#{environmentvariable.admin_CommandCenterApplicationClientID}#"
                                  },
+                                 {
+                                     "SchemaName":  "admin_CommandCenterClientSecret",
+                                     "Value":  "#{environmentvariable.admin_CommandCenterClientSecret}#"
+                                 },
+                                
                                  {
                                      "SchemaName":  "admin_EnvRequestEnableCostTracking",
                                      "Value":  "#{environmentvariable.admin_EnvRequestEnableCostTracking}#"
@@ -219,28 +228,10 @@
                                      "ConnectionOwner":  "#{connectionreference.user.admin_CoECorePowerPlatformforAdminsEnvRequest}#"
                                  },
                                  {
-                                     "LogicalName":  "admin_CDSCurrentEnvironmentCoEAuditConnection",
-                                     "ConnectionId":  "#{connectionreference.admin_CDSCurrentEnvironmentCoEAuditConnection}#",
-                                     "ConnectorId":  "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
-                                     "ConnectionOwner":  "#{connectionreference.user.admin_CDSCurrentEnvironmentCoEAuditConnection}#"
-                                 },
-                                 {
                                      "LogicalName":  "admin_CoECoreDataverseForApps",
                                      "ConnectionId":  "#{connectionreference.admin_CoECoreDataverseForApps}#",
                                      "ConnectorId":  "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
                                      "ConnectionOwner":  "#{connectionreference.user.admin_CoECoreDataverseForApps}#"
-                                 },
-                                 {
-                                     "LogicalName":  "admin_CoECoreHTTPwithAzureADforCoEenvironment",
-                                     "ConnectionId":  "#{connectionreference.admin_CoECoreHTTPwithAzureADforCoEenvironment}#",
-                                     "ConnectorId":  "/providers/Microsoft.PowerApps/apis/shared_webcontents",
-                                     "ConnectionOwner":  "#{connectionreference.user.admin_CoECoreHTTPwithAzureADforCoEenvironment}#"
-                                 },
-                                 {
-                                     "LogicalName":  "admin_CoECoreHTTPAzureADCoEEnvtBase",
-                                     "ConnectionId":  "#{connectionreference.admin_CoECoreHTTPAzureADCoEEnvtBase}#",
-                                     "ConnectorId":  "/providers/Microsoft.PowerApps/apis/shared_webcontents",
-                                     "ConnectionOwner":  "#{connectionreference.user.admin_CoECoreHTTPAzureADCoEEnvtBase}#"
                                  }
                              ]
 }
